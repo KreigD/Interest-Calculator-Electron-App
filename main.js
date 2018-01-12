@@ -12,13 +12,13 @@ let win
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600
+    width: 1000,
+    height: 800
   })
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, '/app/index.html'),
     protocol: 'file:',
     slashes: true
   }))
@@ -57,42 +57,4 @@ app.on('activate', () => {
   }
 })
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
-buttonClicks();
-
-function buttonClicks() {
-  document.getElementById("btnSimple").addEventListener("click", simpleInterest, false);
-  document.getElementById("btnCompound").addEventListener("click", compoundInterest, false);
-}
-
-var principal = 0;
-var interestRate = 0;
-var timesCompounded = 0;
-var termOfLoan = 0;
-var amount = 0;
-
-function simpleInterest() {
-  var principal = parseFloat(document.getElementById("principalSimple").value);
-  var interestRate = parseFloat(document.getElementById("interestSimple").value);
-  var interestRate = interestRate / 100;
-  var termOfLoan = parseFloat(document.getElementById("termSimple").value);
-  var simpleInt = principal * interestRate * termOfLoan;
-  var amount = (principal + simpleInt).toFixed(2);
-  document.getElementById("siOutput").innerHTML = simpleInterest();
-}
-
-function compoundInterest() {
-  var principal = parseFloat(document.getElementById("principalCompound").value);
-  var interestRate = parseFloat(document.getElementById("interestCompound").value);
-  var interestRate = interestRate / 100;
-  var timesCompounded = parseFloat(document.getElementById("timesCompounded").value);
-  var termOfLoan = parseFloat(document.getElementById("termCompound").value);
-  var a = interestRate / timesCompounded;
-  var b = 1 + a;
-  var c = timesCompounded * termOfLoan;
-  var d = Math.pow(b, c);
-  var amount = (principal * d).toFixed(2);
-  document.getElementById("ciOutput").innerHTML = compoundInterest();
-}
+require('./app/js/index.js')
