@@ -13,7 +13,8 @@ function simpleInterest() {
   var termOfLoan = parseFloat(document.getElementById("termSimple").value);
   var simpleInt = principal * interestRate * termOfLoan;
   var amount = (principal + simpleInt).toFixed(2);
-  document.getElementById("siOutput").innerHTML = "$" + amount;
+  document.getElementById("siOutput-01").innerHTML = "Interest: $" + simpleInt.toFixed(2);
+  document.getElementById("siOutput-02").innerHTML = "Total plus interest: $" + amount;
 }
 
 function compoundInterest() {
@@ -27,5 +28,6 @@ function compoundInterest() {
   var c = timesCompounded * termOfLoan;
   var d = Math.pow(b, c);
   var amount = (principal * d).toFixed(2);
-  document.getElementById("ciOutput").innerHTML = "$" + amount;
+  document.getElementById("ciOutput-01").innerHTML = "Interest: $" + (amount - principal).toFixed(2);
+  document.getElementById("ciOutput-02").innerHTML = "Total plus interest: $" + amount;
 }

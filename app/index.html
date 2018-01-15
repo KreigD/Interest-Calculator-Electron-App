@@ -20,7 +20,7 @@
     <div class="container" id="simple-interest">
       <h3>Simple Interest</h3>
       <p class="lead">A=i+(prt)</p>
-      <form>
+      <form id="siForm">
         <div class="form-group">
           <label for="principalSimple">Principal</label>
           <input type="text" class="form-control" id="principalSimple" placeholder="Enter amount without dollar sign">
@@ -36,19 +36,20 @@
         <button type="button" class="btn btn-primary" id="btnSimple" onclick="simpleInterest()">Submit</button>
       </form>
       <div>
-        <p class="lead my-3" id="siOutput"></p>
+        <p class="lead mt-3" id="siOutput-01"></p>
+        <p class="lead mb-3" id="siOutput-02"></p>
       </div>
       <div class="text-center">
-        <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="window.location.reload()">
+        <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="document.getElementById('siForm').reset()">
       </div>
     </div>
     <br>
     <hr>
     <br>
-    <div class=" container " div="compound-interest ">
+    <div class="container" div="compound-interest ">
       <h3>Compound Interest</h3>
       <p class="lead">A=p(1+(r/n))^(nt)</p>
-      <form>
+      <form id="ciForm">
         <div class="form-group">
           <label for="principalCompound">Principal</label>
           <input type="text" class="form-control" id="principalCompound" placeholder="Enter amount without dollar sign">
@@ -68,10 +69,11 @@
         <button type="button" class="btn btn-primary" id="btnCompound" onclick="compoundInterest()">Submit</button>
       </form>
       <div>
-        <p class="lead my-3" id="ciOutput"></p>
+        <p class="lead mt-3" id="ciOutput-01"></p>
+        <p class="lead mb-3" id="ciOutput-02"></p>
       </div>
       <div class="text-center">
-        <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="window.location.reload()">
+        <input class="btn btn-secondary btn-lg" type="button" value="Reset" onClick="document.getElementById('ciForm').reset()">
       </div>
     </div>
   </div>
