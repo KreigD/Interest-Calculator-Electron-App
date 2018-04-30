@@ -10,5 +10,8 @@
   },
   "repository": "https://github.com/KreigD/Interest-Calculator-Electron-App.git",
   "author": "Kreig D <kreig.e.durham@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "hoek": "^5.0.3"
+  }
 }
